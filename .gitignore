@@ -1,0 +1,8 @@
+node_modules
+__tests__
+*.apk
+*.zip
+*.png
+ios
+android
+
