@@ -1,79 +1,90 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+Here's a sample README file for your React Native finance transaction assistant application:
 
-# Getting Started
+---
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+# ByeEuroBye: Watch Your Money Disappear!
 
-## Step 1: Start the Metro Server
+**ByeEuroBye** is a React Native-based finance tracking assistant that helps you manage and track your expenses. With separate tabs for different transaction types (e.g., personal expenses, shared expenses), it keeps all your finances organized. Get ready to keep an eye on where your money goes — even if it feels like it vanishes sometimes!
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Features
 
-To start Metro, run the following command from the _root_ of your React Native project:
+- **Track Transactions:** Add, edit, and delete expenses with a simple and intuitive interface.
+- **Categorize Expenses:** Separate tabs for managing Personal, Shared, and Business expenses.
+- **Persistent Storage:** Transactions are stored locally using `AsyncStorage`, ensuring that your data remains intact even after closing the app.
+- **Summary of Spending:** View total amounts for each category to see where your money is disappearing.
+- **Intuitive User Interface:** Minimalistic design with easy navigation for an optimal user experience.
+- **Fast API Integration:** Sync your transactions with a backend FastAPI service (optional).
 
-```bash
-# using npm
-npm start
+## Tech Stack
 
-# OR using Yarn
-yarn start
-```
+- **React Native:** Frontend framework for building cross-platform mobile apps.
+- **AsyncStorage:** Persistent storage for local data.
+- **FastAPI (optional):** Backend service for syncing transactions.
+- **UUID:** Unique identifier generation for each transaction.
+  
+## Installation
 
-## Step 2: Start your Application
+To run WalletHoudini locally on your machine:
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+1. Clone the repository:
 
-### For Android
+    ```bash
+    git clone https://github.com/yourusername/wallethoudini.git
+    ```
 
-```bash
-# using npm
-npm run android
+2. Navigate to the project directory:
 
-# OR using Yarn
-yarn android
-```
+    ```bash
+    cd wallethoudini
+    ```
 
-### For iOS
+3. Install dependencies:
 
-```bash
-# using npm
-npm run ios
+    ```bash
+    npm install
+    ```
 
-# OR using Yarn
-yarn ios
-```
+4. Run the app on an emulator or device:
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+    ```bash
+    npx react-native run-android    # For Android
+    npx react-native run-ios        # For iOS
+    ```
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+## API Integration (Optional)
 
-## Step 3: Modifying your App
+If you wish to use the FastAPI backend to sync your transactions:
 
-Now that you have successfully run the app, let's modify it.
+1. Set up your FastAPI backend by following the [FastAPI Documentation](https://fastapi.tiangolo.com/).
+2. Once your FastAPI server is running, update the `baseUrl` in the API call section of the app to match your FastAPI server's URL.
+3. Example API call:
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+    ```js
+    const response = await fetch(`${baseUrl}/transactions/${username}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ "transactions": storedTransactions })
+    });
+    ```
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+## Usage
 
-## Congratulations! :tada:
+1. Launch the app and navigate through the tabs to view different categories of expenses.
+2. Use the floating "+" button to add new transactions.
+3. Edit or delete existing transactions by using the respective buttons beside each item.
+4. Keep track of your total spending for each category displayed at the bottom of each tab.
+5. Optionally, sync with your FastAPI backend to store transactions in a central database.
 
-You've successfully run and modified your React Native App. :partying_face:
+## Screenshots
 
-### Now what?
+*Insert relevant screenshots here*
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+## Contributing
 
-# Troubleshooting
+Contributions are welcome! If you have any ideas or improvements, feel free to open an issue or create a pull request.
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+## License
 
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
