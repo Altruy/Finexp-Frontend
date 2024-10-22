@@ -1,7 +1,3 @@
-Here's a sample README file for your React Native finance transaction assistant application:
-
----
-
 # ByeEuroBye: Watch Your Money Disappear!
 
 **ByeEuroBye** is a React Native-based finance tracking assistant that helps you manage and track your expenses. With separate tabs for different transaction types (e.g., personal expenses, shared expenses), it keeps all your finances organized. Get ready to keep an eye on where your money goes — even if it feels like it vanishes sometimes!
@@ -77,9 +73,6 @@ If you wish to use the FastAPI backend to sync your transactions:
 4. Keep track of your total spending for each category displayed at the bottom of each tab.
 5. Optionally, sync with your FastAPI backend to store transactions in a central database.
 
-## Screenshots
-
-*Insert relevant screenshots here*
 
 ## Contributing
 
